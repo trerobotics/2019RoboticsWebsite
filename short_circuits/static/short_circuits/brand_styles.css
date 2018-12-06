@@ -1,0 +1,62 @@
+body {
+    font-size: 30px;
+    text-align: center;
+}
+
+h1 {
+    
+}
+
+h2 {
+    color: #4B9CD3;
+    font-size: 1.8rem;
+    padding: 3% 2%;
+}
+
+h3 {
+    color: white;
+    font-weight: 100;
+    line-height: 1.5;
+}
+
+h4 {
+    color: #000;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+h5 {
+    
+}
+
+h6 {
+    color: #000;
+    font-weight: 200;
+    font-size: .8rem;
+    padding-top: 2%
+}
+
+p {
+    font-size: 1rem;
+    text-align: left;
+}
+
+hr
+{
+    color: #eee;
+    width: 90%;
+}
+
+footer {
+    height: 12vh;
+    background: #eee;
+}
+
+a {
+    
+}
+
+.navbar a {
+    font-size: 1rem;
+}
+}
