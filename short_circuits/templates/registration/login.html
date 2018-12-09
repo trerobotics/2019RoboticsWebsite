@@ -8,62 +8,61 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>10975 | login</title>
+    <title>Team 10975 Raiders Short-Circuits</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+    <!-- W3.css -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     <!-- Custom styles for this template -->
-    <link href="css/logo-nav.css" rel="stylesheet">
-    <link href="/css/index.css" rel="stylesheet">
-    <link href="css/brand-styles.css" rel="stylesheet">
+    {% load static %}
+    <link href="{% static 'short_circuits/index.css'%}" rel="stylesheet">
+    <link href="{% static 'short_circuits/brand_styles'%}" rel="stylesheet">
 
   </head>
 
   <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="/index.html">
-          <img src="/images/Logo/Raiders_shortcircuits_logo.jpg" width="40" height="40" alt="">
-        </a>
-        <h4 style="vertical-align: baseline; font-size: 1.3rem; margin-bottom: -8px;">Raiders Short-Circuits</h4>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Sponsors</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Members</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <div class="w3-bar w3-large w3-light-blue w3-text-white" style="padding: 0 10px;">
+      <img class="w3-bar-item" src="{% static 'short_circuits/East-robotics-Logo-Only_alpha.png' %}" height="60px">
+      <a href="#" class="w3-bar-item w3-padding-16 w3-mobile w3-hide-small w3-right">Login</a>
+      <a href="#" class="w3-bar-item w3-padding-16 w3-mobile w3-hide-small w3-right">Sponsors</a>
+      <a href="#" class="w3-bar-item w3-padding-16 w3-mobile w3-hide-small w3-right">About</a>
+      <a href="#" class="w3-bar-item w3-padding-16 w3-mobile w3-hide-small w3-right">Home</a>
+      <a href="javascript:void(0)" class="w3-bar-item  w3-right w3-hide-large w3-hide-medium" onclick="myFunction()">&#9776;</a>
+    </div>
+
+    <div id="demo" class="w3-bar-block w3-light-blue w3-hide w3-hide-large w3-hide-medium">
+      <a href="#" class="w3-bar-item w3-button w3-right">Home</a>
+      <a href="#" class="w3-bar-item w3-button w3-right">About</a>
+      <a href="#" class="w3-bar-item w3-button w3-right">Sponsors</a>
+      <a href="#" class="w3-bar-item w3-button w3-right">Login</a>
+    </div>
+
 
     <!-- just to get things working, not final in the slightest -->
       
     {% if form.errors%}
+
     <p>Something you entered doesn't seem right</p>
     {% endif %}
 
     {% if next %}
-    <p>You must login to access that page</p>
+
+    <div class="w3-panel w3-pale-red w3-leftbar w3-border-red">
+      <h2>Woah there!</h2>
+      <p>You have to log in before you can access that page!</p>
+    </div>
     {% endif %}
 
-    <form method="post" action="{% url 'login' %}">
+    
+
+    <div class="w3-container w3-center" style="height: 70vh; padding: 10%;">
+      <form method="post" action="{% url 'login' %}">
         {% csrf_token %}
 
         <p>Username: {{ form.username }}</p>
@@ -72,9 +71,9 @@
         <input type="submit" name="sumbit" value="login">
         <input type="hidden" name="next" value="{{ next }}">
 
-    </form>
-
-    <footer class="container">
+      </form>
+    </div>
+    <footer class="container w3-footer">
         <h6><i>Website is maintained by Toms River High School East Raiders Short-Circuits<br>
             Team 10975<br>
             contact us at: hseastrobotics@gmail.com</i></h6>
@@ -83,6 +82,19 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- code for the responsive navbar. Open and closes navbar on mobile -->
+
+    <script>
+    function myFunction() {
+      var x = document.getElementById("demo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else { 
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+    </script>
 
   </body>
 

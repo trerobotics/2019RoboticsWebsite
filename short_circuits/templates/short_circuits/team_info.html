@@ -1,1 +1,57 @@
-<h1>team info</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Team 10975 Raiders Short-Circuits</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+    <!-- W3.css -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!-- Custom styles for this template -->
+    {% load static %}
+    <link href="{% static 'short_circuits/index.css'%}" rel="stylesheet">
+    <link href="{% static 'short_circuits/brand_styles'%}" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    {% include './nav.html' %}
+      
+    <footer class="container">
+        <h6><i>Website is maintained by Toms River High School East Raiders Short-Circuits<br>
+            Team 10975<br>
+            contact us at: hseastrobotics@gmail.com</i></h6>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- code for the responsive navbar. Open and closes navbar on mobile -->
+
+    <script>
+    function myFunction() {
+      var x = document.getElementById("demo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else { 
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+    </script>
+
+  </body>
+
+</html>
