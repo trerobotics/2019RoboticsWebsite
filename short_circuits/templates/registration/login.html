@@ -47,8 +47,10 @@
     <!-- just to get things working, not final in the slightest -->
       
     {% if form.errors%}
-
-    <p>Something you entered doesn't seem right</p>
+    <div class="w3-panel w3-pale-red w3-leftbar w3-border-red">
+      <h2>Let's try that one again</h2>
+      <p>Something that you entered doesn't seem quite right</p>
+    </div>
     {% endif %}
 
     {% if next %}
